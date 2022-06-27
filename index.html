@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+</head>
+<body class="page">
+
+    <header class="header">
+        <img class="header__logo" src="./images/mesto_logo.svg" alt="Логотип">
+    </header>
+    
+    <main class="main">
+
+        <section class="profile">
+
+            <img class="profile__avatar" src="./images/jaques_avatar.jpg" alt="Аватарка Жака-Ива Кусто">
+            <div class="profile__profile-info">
+                <h1 class="profile__name"></h1>
+                <p class="profile__decription"></p>
+            </div>
+
+            <div class="profile__edit">
+                <input class="profile__edit-button" type="button">
+            </div>
+
+        </section>
+
+        <section class="elements">
+            <figure class="element">
+                <img class="element__image" src="" alt="">
+                <figcaption class="element__place"></figcaption>
+                <input class="element__like-button" type="button">
+            </figure>
+        </section>
+
+        <footer class="footer">
+            <p class="footer__copyright"></p>
+        </footer>
+
+    </main>
+
+    <section class="popup">
+        <div class="popup__form">
+            <p class="popup__title">Редактировать профиль</p>
+            <input class="popup__input popup__input_name" type="text">
+            <input class="popup__input popup__input_description" type="text">
+            <button class="popup__sumbit-btn"></button>
+        </div>
+    </section>
+
+</body>
+</html>
