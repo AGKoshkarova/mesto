@@ -1,5 +1,5 @@
 .elements__container {
-    width: 880px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, max-content));
     grid-template-rows: repeat(auto-fit, minmax(361px, max-content));
