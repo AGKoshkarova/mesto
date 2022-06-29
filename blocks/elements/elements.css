@@ -1,4 +1,6 @@
 .elements {
+    display: flex;
+    justify-content: center;
     max-width: 880px;
-    padding: 51px 200px 67px;
+    margin: 0 auto;
 }

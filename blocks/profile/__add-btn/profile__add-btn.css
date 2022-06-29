@@ -13,3 +13,18 @@
     border-radius: 2px;
     box-sizing: border-box;
 }
+
+@media screen and (min-width: 320px) {
+    .profile__add-btn {
+        width: 100%;
+        margin: 30px 0 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .profile__add-btn {
+        margin: 0 0 0 244px;
+        width: 150px;
+        height: 50px;
+    }
+}
