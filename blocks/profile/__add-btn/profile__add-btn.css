@@ -23,7 +23,7 @@
 @media screen and (min-width: 1024px) {
     .profile__add-btn {
         align-self: unset;
-        margin: 0 0 0 244px;
+        margin: 35px 0 35px 244px;
         width: 150px;
         height: 50px;
         background-size: 22px 22px;

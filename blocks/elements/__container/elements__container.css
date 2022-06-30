@@ -1,5 +1,5 @@
 .elements__container {
-    width: 100%;
+    max-width: 100%;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, max-content));
