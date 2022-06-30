@@ -7,7 +7,7 @@
         width: 282px;
         flex-direction: column;
         align-content: center;
-        padding: 42px 0 36px;
+        padding: 38px 0 36px;
         margin: 0 auto;
     }
 }
@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 1024px) {
     .profile {
-        padding: 40px 0 51px;
+        padding: 36px 0 46px;
         min-width: 880px;
         flex-direction: row;
     }
