@@ -10,6 +10,11 @@
     border: 2px solid #FFFFFF;
     border-radius: 2px;
     box-sizing: border-box;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.profile__add-btn:hover {
+    opacity: 0.6;
 }
 
 @media screen and (min-width: 320px) {
