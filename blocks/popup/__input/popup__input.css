@@ -1,5 +1,5 @@
 .popup__input {
     outline: unset;
     border: none;
-    width: 358px;
+    width: 100%;
 }

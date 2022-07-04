@@ -1,8 +1,7 @@
 .popup__sumbit-btn {
-    padding: 0;
+    cursor: pointer;
     margin: 48px auto 37px;
-    width: 358px;
-    height: 50px;
+    width: 100%;
     text-align: center;
     font-size: 18px;
     line-height: 22px;
@@ -15,4 +14,16 @@
 
 .popup__sumbit-btn:hover {
     opacity: 0.8;
+}
+
+@media screen and (min-width: 320px) {
+    .popup__sumbit-btn {
+        padding: 14px 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .popup__sumbit-btn {
+        padding: 14px 0 18px;
+    }
 }
