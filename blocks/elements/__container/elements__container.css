@@ -6,4 +6,7 @@
     grid-template-rows: repeat(auto-fit, minmax(361px, max-content));
     row-gap: 20px;
     column-gap: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

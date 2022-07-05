@@ -32,58 +32,77 @@
 
         <section class="elements">
 
-            <div class="elements__container">
-                <figure class="element">
+            <ul class="elements__container">
+                <li class="element">
                     <img class="element__image" src="./images/paris.jpg" alt="Париж">
-                    <figcaption class="element__place">Париж<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
+                    <div class="element__place-container">
+                        <p class="element__place">Париж</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                </li>
 
-                <figure class="element">
+                <li class="element">
                     <img class="element__image" src="./images/rome_opt.jpeg" alt="Рим">
-                    <figcaption class="element__place">Рим<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
+                    <div class="element__place-container">
+                        <p class="element__place">Рим</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                </li>
 
-                 <figure class="element">
+                 <li class="element">
                     <img class="element__image" src="./images/berlin_opt.jpeg" alt="Берлин">
-                    <figcaption class="element__place">Берлин<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
+                    <div class="element__place-container">
+                        <p class="element__place">Берлин</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                 </li>
 
-                <figure class="element">
+                <li class="element">
                     <img class="element__image" src="./images/amsterdam_opt.jpeg" alt="Амстердам">
-                    <figcaption class="element__place">Амстердам<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
+                    <div class="element__place-container">
+                        <p class="element__place">Амстердам</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                </li>
 
-                <figure class="element">
+                <li class="element">
                     <img class="element__image" src="./images/london_opt.jpeg" alt="Лондон">
-                    <figcaption class="element__place">Лондон<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
+                    <div class="element__place-container">
+                        <p class="element__place">Лондон</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                </li>
 
-                <figure class="element">
+                <li class="element">
                     <img class="element__image" src="./images/new-york_opt.jpeg" alt="Нью-Йорк">
-                    <figcaption class="element__place">Нью-Йорк<button class="element__like-btn" type="button"></button></figcaption>
-                </figure>
-            </div>
+                    <div class="element__place-container">
+                        <p class="element__place">Нью-Йорк</p>
+                        <button class="element__like-btn" type="button"></button>
+                    </div>
+                </li>
+            </ul>
         </section>
-
-        <footer class="footer">
-            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-        </footer>
 
     </main>
 
-    <section class="popup">
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+     </footer>
 
-        <form class="popup__form">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <input class="popup__input popup__input_name" type="text">
-            <hr class="popup__line">
-            <input class="popup__input popup__input_description" type="text">
-            <hr class="popup__line">
-            <button class="popup__sumbit-btn" type="submit">Сохранить</button>
-        </form>
-        <button class="popup__close-btn"><img class="popup__close-icon" src="./images/close_button.svg" alt="Закрыть"></button>
+    <div class="popup">
 
-    </section>
+        <div class="popup__container">
+
+            <button class="popup__close-btn" type="button"></button>
+            <form class="popup__form">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input class="popup__input popup__input_type_name" type="text" name="Имя">
+                <input class="popup__input popup__input_type_description" type="text" name="Описание">
+                <button class="popup__sumbit-btn" type="submit">Сохранить</button>
+            </form>
+            
+        </div>
+    </div>
 
     <script src="./scripts/index.js"></script> 
 </body>

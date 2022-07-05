@@ -7,8 +7,8 @@ const popupElement = document.querySelector('.popup');
 const popupSubmitButton = popupElement.querySelector('.popup__sumbit-btn');
 const popupCloseButton =  popupElement.querySelector('.popup__close-btn');
 const popupFormElement = popupElement.querySelector('.popup__form');
-const profileNameInput = popupFormElement.querySelector('.popup__input_name');
-const profileDescriptionInput = popupFormElement.querySelector('.popup__input_description'); 
+const profileNameInput = popupFormElement.querySelector('.popup__input_type_name');
+const profileDescriptionInput = popupFormElement.querySelector('.popup__input_type_description'); 
 
 const openPopup = function () {
     popupElement.classList.add('popup_is-opened');

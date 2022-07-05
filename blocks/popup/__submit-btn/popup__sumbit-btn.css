@@ -9,6 +9,7 @@
     color: white;
     border-radius: 2px;
     border: none;
+    outline: none;
     transition: opacity 0.4s ease-in-out;
 }
 

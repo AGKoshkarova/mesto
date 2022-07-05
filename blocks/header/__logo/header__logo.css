@@ -1,16 +1,9 @@
 @media screen and (min-width: 320px) {
     .header__logo {
+        display: block;
         width: 104px;
         height: 25px;
         margin: 0 0 32px 27px;
-    }
-}
-
-@media screen and (min-width: 320px) {
-    .header__logo {
-        width: 104px;
-        height: 25px;
-        margin: 0 0 31px 27px;
     }
 }
 

@@ -1,11 +1,14 @@
 .element__like-btn {
     align-self: center;
     border: none;
-    margin-right: 5px;
+    margin: 0;
+    padding: 0;
     width: 22px;
     height: 19px;
     background-image: url(../../../images/like_disabled.svg);
     background-color: white;
+    border: none;
+    outline: none;
     transition: opacity 0.4s ease-in-out;
 }
 
