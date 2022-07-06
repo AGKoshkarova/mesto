@@ -1,7 +1,6 @@
 .profile__add-btn {
     cursor: pointer;
     padding: 0;
-    width: 150px;
     height: 50px;
     align-self: center;
     background-image: url(../../../images/add_button.svg);
@@ -32,7 +31,6 @@
         align-self: unset;
         margin: 35px 0 35px 244px;
         width: 150px;
-        height: 50px;
         background-size: 22px 22px;
     }
 }

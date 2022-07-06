@@ -1,7 +1,7 @@
 .element__like-btn {
     align-self: center;
-    margin: 0;
     padding: 0;
+    margin: 0 5px 0 0;
     width: 22px;
     height: 19px;
     background-image: url(../../../images/like_disabled.svg);
@@ -13,9 +13,4 @@
 
 .element__like-btn:hover {
     opacity: 50%;
-}
-
-.element__like-btn:active {
-    background-image: url(../../../images/like_active.svg);
-    opacity: 100%;
 }

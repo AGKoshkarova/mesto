@@ -16,4 +16,7 @@
 
 **Ссылка**
 
-Проект уже опубликован на GitHub Pages, с ним вы можете ознакомиться по ссылке: https://github.com/AGKoshkarova/mesto.git .
+Проект уже опубликован на GitHub Pages, с ним вы можете ознакомиться по ссылке: https://agkoshkarova.github.io/mesto/index.html  .
+
+
+

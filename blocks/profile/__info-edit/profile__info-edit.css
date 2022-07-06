@@ -1,15 +1,3 @@
 .profile__info-edit {
     display: flex;
 }
-
-@media screen and (min-width: 320px) {
-    .profile__info-edit {
-        justify-content: center;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .profile__info-edit {
-        justify-content: unset;
-    }
-}

@@ -1,5 +1,5 @@
 .element__place-container {
     display: flex;
     justify-content: space-between;
-    padding: 30px 20px 30px 20px;
+    margin: 25px 15px 25px 21px;
 }

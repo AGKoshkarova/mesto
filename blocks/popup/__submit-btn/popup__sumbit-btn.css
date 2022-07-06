@@ -1,10 +1,7 @@
 .popup__sumbit-btn {
     cursor: pointer;
-    margin: 48px auto 37px;
     width: 100%;
     text-align: center;
-    font-size: 18px;
-    line-height: 22px;
     background-color: black;
     color: white;
     border-radius: 2px;
@@ -19,12 +16,21 @@
 
 @media screen and (min-width: 320px) {
     .popup__sumbit-btn {
+        height: 46px;
+        margin: 45px auto 25px;
         padding: 14px 0;
+        font-size: 14px;
+        line-height: 17px;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .popup__sumbit-btn {
+        height: 50px;
+        margin-top: 48px;
+        margin-bottom: 37px;
         padding: 14px 0 18px;
+        font-size: 18px;
+        line-height: 22px;
     }
 }

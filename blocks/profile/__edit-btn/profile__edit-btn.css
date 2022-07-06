@@ -22,15 +22,14 @@
     .profile__edit-btn {
         width: 18px;
         height: 18px;
-        margin-left: 10px;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .profile__edit-btn {
+        margin-left: 18px;
         width: 24px;
         height: 24px;
-        margin-left: 18px;
         background-size: 10px 10px;
     }
 }
