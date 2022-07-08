@@ -9,12 +9,17 @@ const profileDescriptionInput = popupFormElement.querySelector('.popup__input_ty
 
 const openPopup = function () {
     popupElement.classList.add('popup_opened');
-    profileNameInput.value = profileName.textContent;
-    profileDescriptionInput.value = profileDescription.textContent;
+    //profileNameInput.value = profileName.textContent;
+    //profileDescriptionInput.value = profileDescription.textContent;
 }
 
 const closePopup = function () {
     popupElement.classList.remove('popup_opened');
+}
+
+function changeProfileInfo () {
+    profileNameInput.value = profileName.textContent;
+    profileDescriptionInput.value = profileDescription.textContent; 
 }
 
 function popupFormSubmitHandler(event) {
@@ -23,9 +28,11 @@ function popupFormSubmitHandler(event) {
     profileDescription.textContent = profileDescriptionInput.value;
 
     closePopup();
-
 }
+
 profileEditButton.addEventListener('click', openPopup);
+
+profileEditButton.addEventListener('click', changeProfileInfo);
 
 popupCloseButton.addEventListener('click', closePopup);
 
