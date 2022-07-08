@@ -19,7 +19,7 @@ const closePopup = function () {
 
 function changeProfileInfo () {
     profileNameInput.value = profileName.textContent;
-    profileDescriptionInput.value = profileDescription.textContent; 
+    profileDescriptionInput.value = profileDescription.textContent;
 }
 
 function popupFormSubmitHandler(event) {
