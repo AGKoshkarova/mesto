@@ -37,3 +37,20 @@ profileEditButton.addEventListener('click', changeProfileInfo);
 popupCloseButton.addEventListener('click', closePopup);
 
 popupFormElement.addEventListener('submit', popupFormSubmitHandler);
+
+const profileAddButton = document.querySelector('.profile__add-btn');
+const popupAddElement = document.querySelector('.popup_add-card');
+const popupAddCloseButton = document.querySelector('.popup__close-btn_add-card');
+const popupAddSubmitButton = popupAddElement.querySelector('.popup__submit-btn_add-card');
+
+function openPopupAdd () {
+    popupAddElement.classList.add('popup_opened');
+}
+
+function closePopupAdd () {
+    popupAddElement.classList.remove('popup_opened');
+}
+
+profileAddButton.addEventListener('click', openPopupAdd);
+popupAddCloseButton.addEventListener('click', closePopupAdd);
+
