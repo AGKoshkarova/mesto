@@ -31,55 +31,7 @@
         </section>
 
         <section class="elements">
-
             <ul class="elements__container">
-                <li class="element">
-                    <img class="element__image" src="./images/paris.jpg" alt="Париж">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Париж</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/rome_opt.jpeg" alt="Рим">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Рим</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                 <li class="element">
-                    <img class="element__image" src="./images/berlin_opt.jpeg" alt="Берлин">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Берлин</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                 </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/amsterdam_opt.jpeg" alt="Амстердам">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Амстердам</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/london_opt.jpeg" alt="Лондон">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Лондон</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
-
-                <li class="element">
-                    <img class="element__image" src="./images/new-york_opt.jpeg" alt="Нью-Йорк">
-                    <div class="element__place-container">
-                        <h3 class="element__place">Нью-Йорк</h3>
-                        <button class="element__like-btn" type="button" aria-label="Нравится"></button>
-                    </div>
-                </li>
             </ul>
         </section>
 
@@ -89,34 +41,59 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
      </footer>
 
-    <div class="popup">
+    <div class="popup popup_type_profile">
+
+        <div class="popup__container">
+
+            <button class="popup__close-btn popup__close-btn_type_profile" type="button" aria-label="Закрыть"></button>
+            <form class="popup__form popup__form_type_profile" name="profile">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
+                <input class="popup__input popup__input_type_description" type="text" name="description" placeholder="О себе" required>
+                <button class="popup__sumbit-btn " type="submit">Сохранить</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="popup popup_type_card">
 
         <div class="popup__container">
 
             <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-            <form class="popup__form" name="profile">
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Имя" required>
-                <input class="popup__input popup__input_type_description" type="text" name="description" placeholder="О себе" required>
-                <button class="popup__sumbit-btn" type="submit">Сохранить</button>
+            <form class="popup__form popup__form_type_card" name="place">
+                <h2 class="popup__title">Новое место</h2>
+                <input class="popup__input popup__input_type_place-name" type="text" name="name" placeholder="Название" value ="" required>
+                <input class="popup__input popup__input_type_link" type="url" name="link" placeholder="Ссылка на картинку" value="" required>
+                <button class="popup__sumbit-btn" type="submit">Создать</button>
             </form>
-
-        </div>
-    </div>
-
-    <div class="popup popup_add-card">
-
-        <div class="popup__container popup__container_add-card">
-            <button class="popup__close-btn popup__close-btn_add-card" type="button" aria-label="Закрыть"></button>
-            <form class="popup__form popup__form_add-card" name="place">
-                <h2 class="popup__title popup__title_add-card">Новое место</h2>
-                <input class="popup__input popup__input_add-card popup__input_type_name" type="text" name="name" placeholder="Название" required>
-                <input class="popup__input popup__input_add-card popup__input_type_description" type="link" name="link" placeholder="Ссылка на картинку" required>
-                <button class="popup__sumbit-btn popup__sumbit-btn_add-card" type="submit">Создать</button>
-            </form>
+        
         </div>
 
     </div>
+
+    <div class="popup popup_type_size">
+
+        <div class="popup__container popup__container_type_size">
+
+            <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+            <img class="popup__image" src="" alt="">
+            <h2 class="popup__subtitle"></h2>
+        
+        </div>
+
+    </div>
+
+    <template id="element-card">
+        <div class="element">
+            <img class="element__image" src="" alt="">
+            <button class="element__trash-btn" type="button"></button>
+            <div class="element__place-container">
+                <h3 class="element__place"></h3>
+                <button class="element__like-btn" type="button" aria-label="Нравится"></button>
+            </div>
+        </div>
+    </template>
 
     <script src="./scripts/index.js"></script> 
 </body>
