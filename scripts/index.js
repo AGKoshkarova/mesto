@@ -58,7 +58,7 @@ const openPopup = function (popupElement) {
 };
 
 const closePopup = function (popupElement) {
-    document.addEventListener('keydown', closePopupWidthEscape);
+    document.removeEventListener('keydown', closePopupWidthEscape);
     popupElement.classList.remove('popup_opened')
 };
 
