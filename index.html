@@ -48,11 +48,11 @@
             <button class="popup__close-btn popup__close-btn_type_profile" type="button" aria-label="Закрыть"></button>
             <form class="popup__form popup__form_type_profile" name="profile" novalidate>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__input popup__input_type_name" id="name-input" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" required>
+                <input class="popup__input popup__input_type_name" id="name-input" type="text" name="name" placeholder="Имя" minlength="2" maxlength="40" autocomplete="off" required>
                 <span class="popup__input-error name-input-error"></span>
-                <input class="popup__input popup__input_type_description" id="description-input" type="text" name="description" placeholder="О себе" minlength="2" maxlength="200" required>
+                <input class="popup__input popup__input_type_description" id="description-input" type="text" name="description" placeholder="О себе" minlength="2" maxlength="200" autocomplete="off" required>
                 <span class="popup__input-error description-input-error"></span>
-                <button class="popup__sumbit-btn " type="submit" disabled>Сохранить</button>
+                <button class="popup__submit-btn popup__submit-btn_disabled" type="submit" disabled>Сохранить</button>
             </form>
 
         </div>
@@ -65,11 +65,11 @@
             <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
             <form class="popup__form popup__form_type_card" name="place" novalidate>
                 <h2 class="popup__title">Новое место</h2>
-                <input class="popup__input popup__input_type_place-name" id="place-input" type="text" name="name" placeholder="Название" value ="" minlength="2" maxlength="30" required>
+                <input class="popup__input popup__input_type_place-name" id="place-input" type="text" name="name" placeholder="Название" value ="" minlength="2" maxlength="30" autocomplete="off" required>
                 <span class="popup__input-error place-input-error"></span>
-                <input class="popup__input popup__input_type_link" id="link-input" type="url" name="link" placeholder="Ссылка на картинку" value="" required>
+                <input class="popup__input popup__input_type_link" id="link-input" type="url" name="link" placeholder="Ссылка на картинку" value="" autocomplete="off" required>
                 <span class="popup__input-error link-input-error"></span>
-                <button class="popup__sumbit-btn" type="submit" disabled>Создать</button>
+                <button class="popup__submit-btn popup__submit-btn_disabled" type="submit" disabled>Создать</button>
             </form>
         
         </div>

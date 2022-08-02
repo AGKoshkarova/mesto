@@ -32,7 +32,7 @@ function isValid (inputElement, formElement) {
 
 }
 
-//функция-обработчки сразу всех полей 
+//функция-обработчик сразу всех полей 
 
 function setEventListeners (formElement) {
     const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
@@ -56,19 +56,20 @@ function enableValidation () {
    });
 }
 
-enableValidation();
 
 //функция, блокирующая кнопку сабмита
 
 function toggleButtonState (formElement) {
-    const submitButton = formElement.querySelector('.popup__sumbit-btn');
+    const submitButton = formElement.querySelector('.popup__submit-btn');
     const validity = formElement.checkValidity();
 
-    if (!validity) {
+    if (validity) {
+        submitButton.removeAttribute('disabled');
+        submitButton.classList.remove('popup__submit-btn_disabled');
+    } else {        
         submitButton.classList.add('popup__submit-btn_disabled');
         submitButton.setAttribute('disabled', true);
-    } else {        
-        submitButton.classList.remove('popup__submit-btn_disabled');
-        submitButton.removeAttribute('disabled');
     }
 }
+
+enableValidation();

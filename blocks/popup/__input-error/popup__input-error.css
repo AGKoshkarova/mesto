@@ -6,4 +6,5 @@
     color: #FF0000;
     display: none;
     align-self: flex-start;
+    min-height: 30px;
 }
