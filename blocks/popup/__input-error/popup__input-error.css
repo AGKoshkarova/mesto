@@ -5,6 +5,10 @@
     line-height: 15px;
     color: #FF0000;
     display: none;
-    align-self: flex-start;
     min-height: 30px;
+    align-self: flex-start;
+}
+
+.popup__input-error:last-of-type {
+    margin-bottom: -17px;
 }
