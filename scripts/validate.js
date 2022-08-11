@@ -65,7 +65,6 @@ function enableValidation(config) {
     });
   }
 
-
 //функция, блокирующая кнопку сабмита
 
 function toggleButtonState (formElement, config) {
@@ -80,7 +79,6 @@ function toggleButtonState (formElement, config) {
         submitButton.setAttribute('disabled', true);
     }
 }
-
 
 function resetFormCondition (config) {
     const formList = Array.from(document.querySelectorAll(config.formElement));
@@ -97,17 +95,6 @@ function resetFormCondition (config) {
             inputElement.classList.remove(config.inputError);
         })
     });
-}
-
-function enableSubmitButton (popup, config) {
-    if (popup.classList.contains('popup_type_profile') && popup.classList.contains('popup_opened')) {
-        popupProfileSubmitButton.removeAttribute('disabled');
-        popupProfileSubmitButton.classList.remove(config.inactiveSubmitButton);
-    }
-    else if (popup.classList.contains('popup_type_card') && popup.classList.contains('popup_opened')) {
-        popupAddCardSubmitButton.classList.add(config.inactiveSubmitButton);
-        popupAddCardSubmitButton.setAttribute('disabled', true);
-    }
 }
 
 enableValidation(selectors);
