@@ -18,7 +18,7 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        this._setEventListenres();
+        this._setEventListeneres();
 
         this._element.querySelector('.element__image').src = this._link;
         this._element.querySelector('.element__place').textContent = this._name;
@@ -27,7 +27,7 @@ export class Card {
         return this._element;
     }
 
-    _setEventListenres() {
+    _setEventListeneres() {
         this._element.querySelector('.element__like-btn').addEventListener('click', () => {
             this._handleLike();
         })
@@ -45,6 +45,6 @@ export class Card {
     }
 
     _handleDeleteCard() {
-        this._element.remove();
+        this._element = null;
     }
 }

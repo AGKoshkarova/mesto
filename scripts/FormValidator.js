@@ -1,17 +1,17 @@
 export class FormValidator {
-    constructor (validationData, formSelector) {
+    constructor (validationData, formElement) {
         this._inputElement = validationData.inputElement;
-        this._formElement = validationData.formElement;
+        this._form = validationData.form;
         this._submitButton = validationData.submitButton;
         this._inactiveSubmitButton = validationData.inactiveSubmitButton;
         this._inputError = validationData.inputError;
         this._inputErrorMessage = validationData.inputErrorMessage;
         this._inputErrorMessageActive = validationData.inputErrorMessageActive;
-        this._formSelector = formSelector;
+        this._formElement = formElement;
     }
     //Метод, показывающий ошибку (приватный)
     _showError(inputElement) {
-        this._formErrorMessage = this._formSelector.querySelector(`.${inputElement.id}-error`);
+        this._formErrorMessage = this._formElement.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.add(this._inputError);
         this._formErrorMessage.textContent = inputElement.validationMessage;
         this._formErrorMessage.classList.add(this._inputErrorMessageActive);
@@ -19,7 +19,7 @@ export class FormValidator {
 
     //Метод, скрывающий ошибку (приватный)
     _hideError(inputElement) {
-        this._formErrorMessage = this._formSelector.querySelector(`.${inputElement.id}-error`);
+        this._formErrorMessage = this._formElement.querySelector(`.${inputElement.id}-error`);
         inputElement.classList.remove(this._inputError);
         this._formErrorMessage.textContent = '';
         this._formErrorMessage.classList.remove(this._inputErrorMessageActive);
@@ -37,7 +37,7 @@ export class FormValidator {
 
    //Метод, возвращающая не валидные инпуты
     _hasInvalidInput() {
-        this._inputList = Array.from(this._formSelector.querySelectorAll(this._inputElement));
+        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputElement));
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid
         });
@@ -45,7 +45,7 @@ export class FormValidator {
 
     //Метод, меняюзий состояние кнопки
     _toggleButtonState() {
-        const submitButton = this._formSelector.querySelector(this._submitButton);
+        const submitButton = this._formElement.querySelector(this._submitButton);
     
         if (this._hasInvalidInput()) {
             submitButton.setAttribute('disabled', true);
@@ -59,7 +59,7 @@ export class FormValidator {
     _setEventListeners() {
 
         this._toggleButtonState();
-        this._inputList = Array.from(this._formSelector.querySelectorAll(this._inputElement));
+        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputElement));
 
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
@@ -77,7 +77,7 @@ export class FormValidator {
     //Метод, сбрасывающий форму (публичный)
     resetFormCondition() {
 
-        this._inputs = Array.from(this._formSelector.querySelectorAll(this._inputElement));
+        this._inputs = Array.from(this._formElement.querySelectorAll(this._inputElement));
         this._inputs.forEach((inputElement) => {
             this._hideError(inputElement);
         })

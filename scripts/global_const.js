@@ -76,7 +76,7 @@ export {initialCards,
 
 const selectors = {
   inputElement: '.popup__input',
-  formElement: '.popup__form',
+  form: '.popup__form',
   submitButton: '.popup__submit-btn',
   inactiveSubmitButton: 'popup__submit-btn_disabled',
   inputError: 'popup__input_type_error',
