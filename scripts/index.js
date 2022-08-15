@@ -20,7 +20,7 @@ import { initialCards,
     popups,
   } from './global_const.js';
 
-import { Card } from './Card.js';
+import { Card } from './item.js';
 import { FormValidator } from './FormValidator.js';
 import { validationData } from './global_const.js';
 
