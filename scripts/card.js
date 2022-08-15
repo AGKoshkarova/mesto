@@ -1,5 +1,3 @@
-//import { initialCards } from "./global_const";
-
 export class Card {
     constructor(card, templateSelector, handleCardClick) {
         this._link = card.link;
@@ -50,10 +48,3 @@ export class Card {
         this._element.remove();
     }
 }
-
-//initialCards.forEach((item) => {
-//    const card = new Card(item.link, item.name);
-//    const cardElement = card.generateCard();
-
-//    cardsContainer.append(cardElement);
-//})
