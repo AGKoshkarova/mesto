@@ -41,23 +41,13 @@ const closePopupWidthEscape = function (evt) {
     }
 }
 
-function enableSubmitButton () {
-    popupProfileSubmitButton.classList.remove('popup__submit-btn_disabled');
-    popupProfileSubmitButton.removeAttribute('disabled');
-}
-
-function disableSubmitButton () {
-    popupAddCardSubmitButton.classList.add('popup__submit-btn_disabled');
-    popupAddCardSubmitButton.setAttribute('disabled', true);
-}
-
 const openProfilePopup = function () {
     profileNameInput.value = profileName.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
 
     openPopup(popupProfileElement);
-    enableSubmitButton(popupProfileElement) //selectors);
     popupProfileFormElementChekValid.resetFormCondition();
+    popupProfileFormElementChekValid.enableSubmitButton();
 };
 
 const closeProfilePopup = function () {
@@ -75,8 +65,8 @@ function popupProfileFormSubmitHandler(event) {
 const openAddCardPopup = function () {
     popupAddCardForm.reset();
     openPopup(popupAddCardElement);
-    disableSubmitButton(popupAddCardElement)//, selectors);
     popupAddCardFormCheckValid.resetFormCondition();
+    popupAddCardFormCheckValid.disableSubmitButton();
 };
 
 const closeAddCardPopup = function () {

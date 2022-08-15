@@ -82,4 +82,18 @@ export class FormValidator {
             this._hideError(inputElement);
         })
     }
+
+    //Активация кнопки
+    enableSubmitButton() {
+        const submitButton = this._formElement.querySelector(this._submitButton);
+        submitButton.classList.remove(this._inactiveSubmitButton);
+        submitButton.removeAttribute('disabled');
+    }
+
+    //Деактивация кнопки
+    disableSubmitButton() {
+        const submitButton = this._formElement.querySelector(this._submitButton);
+        submitButton.setAttribute('disabled', true);
+        submitButton.classList.add(this._inactiveSubmitButton);
+    }
 }
