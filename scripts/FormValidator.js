@@ -20,7 +20,6 @@ export class FormValidator {
     //Метод, скрывающий ошибку (приватный)
     _hideError(inputElement) {
         this._formErrorMessage = this._formSelector.querySelector(`.${inputElement.id}-error`);
-        console.log(this._formElement);
         inputElement.classList.remove(this._inputError);
         this._formErrorMessage.textContent = '';
         this._formErrorMessage.classList.remove(this._inputErrorMessageActive);
