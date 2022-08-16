@@ -1,13 +1,13 @@
 export class FormValidator {
     constructor (validationData, formElement) {
         this._inputElement = validationData.inputElement;
-        this._form = validationData.form;
         this._submitButton = validationData.submitButton;
         this._inactiveSubmitButton = validationData.inactiveSubmitButton;
         this._inputError = validationData.inputError;
         this._inputErrorMessage = validationData.inputErrorMessage;
         this._inputErrorMessageActive = validationData.inputErrorMessageActive;
         this._formElement = formElement;
+        this._button = this._formElement.querySelector(this._submitButton);
     }
     //Метод, показывающий ошибку (приватный)
     _showError(inputElement) {
@@ -45,16 +45,13 @@ export class FormValidator {
 
     //Метод, меняюзий состояние кнопки
     _toggleButtonState() {
-        const submitButton = this._formElement.querySelector(this._submitButton);
-    
         if (this._hasInvalidInput()) {
-            submitButton.setAttribute('disabled', true);
-            submitButton.classList.add(this._inactiveSubmitButton);
+            this._disableSubmitButton();
         } else {        
-            submitButton.classList.remove(this._inactiveSubmitButton);
-            submitButton.removeAttribute('disabled');
+            this._enableSubmitButton();
         }
     }
+
     //Метод, анализирующий события, устанвливающий слушатели (приватный)
     _setEventListeners() {
 
@@ -76,6 +73,7 @@ export class FormValidator {
     
     //Метод, сбрасывающий форму (публичный)
     resetFormCondition() {
+        this._toggleButtonState();
 
         this._inputs = Array.from(this._formElement.querySelectorAll(this._inputElement));
         this._inputs.forEach((inputElement) => {
@@ -84,16 +82,14 @@ export class FormValidator {
     }
 
     //Активация кнопки
-    enableSubmitButton() {
-        const submitButton = this._formElement.querySelector(this._submitButton);
-        submitButton.classList.remove(this._inactiveSubmitButton);
-        submitButton.removeAttribute('disabled');
+    _enableSubmitButton() {
+        this._button.classList.remove(this._inactiveSubmitButton);
+        this._button.removeAttribute('disabled');
     }
 
     //Деактивация кнопки
-    disableSubmitButton() {
-        const submitButton = this._formElement.querySelector(this._submitButton);
-        submitButton.setAttribute('disabled', true);
-        submitButton.classList.add(this._inactiveSubmitButton);
+    _disableSubmitButton() {
+        this._button.setAttribute('disabled', true);
+        this._button.classList.add(this._inactiveSubmitButton);
     }
 }

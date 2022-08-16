@@ -47,7 +47,7 @@ const openProfilePopup = function () {
 
     openPopup(popupProfileElement);
     popupProfileFormElementChekValid.resetFormCondition();
-    popupProfileFormElementChekValid.enableSubmitButton();
+    //popupProfileFormElementChekValid.enableSubmitButton();
 };
 
 const closeProfilePopup = function () {
@@ -66,7 +66,7 @@ const openAddCardPopup = function () {
     popupAddCardForm.reset();
     openPopup(popupAddCardElement);
     popupAddCardFormCheckValid.resetFormCondition();
-    popupAddCardFormCheckValid.disableSubmitButton();
+    //popupAddCardFormCheckValid.disableSubmitButton();
 };
 
 const closeAddCardPopup = function () {
