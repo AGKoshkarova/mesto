@@ -1,5 +1,5 @@
-export class Card {
-    constructor(card, templateSelector, handleCardClick) {
+export default class Card {
+    constructor({ card, handleCardClick }, templateSelector) {
         this._link = card.link;
         this._name = card.name;
         this._templateSelector = templateSelector;
@@ -49,3 +49,5 @@ export class Card {
         this._element = null;
     }
 }
+
+//ВНИМАНИЕ! Класс Card нужно будет куда-то импортировать

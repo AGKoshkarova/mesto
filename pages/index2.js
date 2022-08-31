@@ -1,29 +1,3 @@
-import { initialCards, 
-    popupProfileElement, 
-    popupProfileFormElement,
-    popupProfileSubmitButton,
-    profileName,
-    profileDescription,
-    profileNameInput,
-    profileDescriptionInput, 
-    profileEditButton,
-    profileAddButton,
-    popupAddCardElement,
-    popupAddCardForm,
-    popupAddCardNameInput,
-    popupAddCardLinkInput,
-    popupAddCardSubmitButton,
-    cardsContainer,
-    popupBigSizeElement,
-    popupBigSizeImage,
-    popupBigSizeTitle,
-    popups,
-  } from './global_const.js';
-
-import { Card } from './Card.js';
-import { FormValidator } from './FormValidator.js';
-import { validationData } from './global_const.js';
-
 const openPopup = function (popupElement) {
     document.addEventListener('keydown', closePopupWidthEscape);
     popupElement.classList.add('popup_opened');
@@ -73,10 +47,9 @@ const closeAddCardPopup = function () {
     closePopup(popupAddCardElement);
 };
 
-//функция открытия попапа с картинкой
-
 const handleCardClick = function (name, link) {
-    openPopup(popupBigSizeElement);
+    //openPopup(popupBigSizeElement);
+    
 
     popupBigSizeImage.src = link;
     popupBigSizeTitle.textContent = name;
@@ -121,16 +94,3 @@ popups.forEach((popup) => {
 })
 
 createInitialCards();
-
-profileEditButton.addEventListener('click', openProfilePopup);
-popupProfileFormElement.addEventListener('submit', popupProfileFormSubmitHandler);
-profileAddButton.addEventListener('click', openAddCardPopup);
-popupAddCardForm.addEventListener('submit', addNewCard);
-
-const popupAddCardFormCheckValid = new FormValidator(validationData, popupAddCardForm);
-
-popupAddCardFormCheckValid.enableValidation();
-
-const popupProfileFormElementChekValid = new FormValidator(validationData, popupProfileFormElement);
-
-popupProfileFormElementChekValid.enableValidation();
