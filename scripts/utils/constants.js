@@ -52,28 +52,6 @@ export const popupBigSizeTitle = popupBigSizeElement.querySelector('.popup__subt
   
 export const popups = document.querySelectorAll('.popup');
 
-//export {initialCards, 
-//  popupProfileElement, 
-//  popupProfileFormElement, 
-//  popupProfileSubmitButton,
-//  profileName,
-//  profileDescription,
-//  profileNameInput,
-//  profileDescriptionInput, 
-//  profileEditButton,
-//  profileAddButton,
-//  popupAddCardElement,
-//  popupAddCardForm,
-//  popupAddCardNameInput,
-//  popupAddCardLinkInput,
-//  popupAddCardSubmitButton,
-//  cardsContainer,
-//  popupBigSizeElement,
-//  popupBigSizeImage,
-//  popupBigSizeTitle,
-//  popups
-//  };
-
 const selectors = {
   inputElement: '.popup__input',
   form: '.popup__form',

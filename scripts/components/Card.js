@@ -49,5 +49,3 @@ export default class Card {
         this._element = null;
     }
 }
-
-//ВНИМАНИЕ! Класс Card нужно будет куда-то импортировать

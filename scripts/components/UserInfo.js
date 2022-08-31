@@ -1,4 +1,4 @@
-export default class UserInfo {
+class UserInfo {
     constructor({ userName, userJob }) {
         this._userNameSelector = document.querySelector(userName);
         this._userJobSelector = document.querySelector(userJob);
@@ -21,8 +21,8 @@ export default class UserInfo {
 }
 
 export const userData = new UserInfo({
-    userName: '.popup__input_type_name',
-    userJob: '.popup__input_type_description'
+    userName: '.profile__name',
+    userJob: '.profile__description'
 })
 
 
