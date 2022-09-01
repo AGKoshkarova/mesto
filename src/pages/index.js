@@ -86,7 +86,6 @@ profileEditButton.addEventListener('click', () => {
     profileEditForm.open();
     profileNameInput.value = profileName.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
-    console.log(profileEditForm);
 });
 
 //открываем попап добавления карточки
