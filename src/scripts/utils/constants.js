@@ -1,29 +1,44 @@
 export const initialCards = [
     {
       name: 'Париж',
-      link: './images/paris.jpg'
+      link: parisImage
     },
     {
       name: 'Нью-Йорк',
-      link: './images/new-york_opt.jpeg'
+      link: newYorkImage
     },
     {
       name: 'Рим',
-      link: './images/rome_opt.jpeg'
+      link: romeImage
     },
     {
       name: 'Лондон',
-      link: './images/london_opt.jpeg'
+      link: londonImage
     },
     {
       name: 'Берлин',
-      link: './images/berlin_opt.jpeg'
+      link: berlinImage
     },
     {
       name: 'Амстердам',
-      link: './images/amsterdam_opt.jpeg'
+      link: amsterdamImage
     }
   ];
+
+import parisImage from '../../images/paris.jpg';
+import newYorkImage from '../../images/new-york_opt.jpeg';
+import romeImage from '../../images/rome_opt.jpeg';
+import londonImage from '../../images/london_opt.jpeg';
+import berlinImage from '../../images/berlin_opt.jpeg';
+import amsterdamImage from '../../images/amsterdam_opt.jpeg';
+
+//const parisImage = new URL('../../images/paris.jpg', import.meta.url);
+//const newYorkImage = new URL('../../images/new-york_opt.jpeg', import.meta.url);
+//const romeImage = new URL('../../images/rome_opt.jpeg', import.meta.url);
+//const londonImage = new URL('../../images/london_opt.jpeg', import.meta.url);
+//const berlinImage = new URL('../../images/berlin_opt.jpeg', import.meta.url);
+//const amsterdamImage = new URL('../../images/amsterdam_opt.jpeg', import.meta.url);
+
 
 export const popupProfileElement = document.querySelector('.popup_type_profile');
 export const popupProfileFormElement = popupProfileElement.querySelector('.popup__form_type_profile');

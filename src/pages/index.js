@@ -16,6 +16,7 @@ import Section from '../scripts/components/Section.js';
 import PopupWithForm from '../scripts/components/PopupWithForm.js';
 import PopupWithImage from '../scripts/components/PopupWithImage.js';
 import { userData } from '../scripts/components/UserInfo.js';
+import './index.css'
 
 //создаем дефолтные карточки
 const initialCardList = new Section({ 
