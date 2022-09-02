@@ -20,9 +20,12 @@ export default class Card {
         this._element = this._getTemplate();
         this._setEventListeneres();
 
-        this._element.querySelector('.element__image').src = this._link;
-        this._element.querySelector('.element__place').textContent = this._name;
-        this._element.querySelector('.element__place').alt = this._name;
+        this._image = this._element.querySelector('.element__image');
+        this._place = this._element.querySelector('.element__place');
+
+        this._image.src = this._link;
+        this._place.textContent = this._name;
+        this._image.alt = this._name;
 
         return this._element;
     }

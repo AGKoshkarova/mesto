@@ -26,7 +26,7 @@ export default class FormValidator {
     }
 
     //Метод, обобщающий функционал показа/скрытия ошибки на основе валидности поля (приватный)
-    _isValid(inputElement) {
+    _toggleError(inputElement) {
         
         if (!inputElement.validity.valid) {
             this._showError(inputElement);
@@ -60,7 +60,7 @@ export default class FormValidator {
 
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
-                this._isValid(inputElement);
+                this._toggleError(inputElement);
                 this._toggleButtonState();
             });
         });

@@ -7,58 +7,42 @@ import { initialCards,
     profileEditButton,
     profileAddButton,
     popupAddCardForm
-  } from '../scripts/utils/constants.js';
+  } from '../utils/constants.js';
 
-import Card from '../scripts/components/Card.js';
-import FormValidator from '../scripts/components/FormValidator.js';
-import { validationData } from '../scripts/utils/constants.js';
-import Section from '../scripts/components/Section.js';
-import PopupWithForm from '../scripts/components/PopupWithForm.js';
-import PopupWithImage from '../scripts/components/PopupWithImage.js';
-import { userData } from '../scripts/components/UserInfo.js';
+import FormValidator from '../components/FormValidator.js';
+import { validationData } from '../utils/constants.js';
+import Section from '../components/Section.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
 import './index.css'
+import { renderElements } from '../utils/utils.js';
+import UserInfo from '../components/UserInfo.js';
 
 //создаем дефолтные карточки
-const initialCardList = new Section({ 
-    items: initialCards,
-    renderer: (item) => {
-        const card = new Card({
-        card: item,
-        handleCardClick: () => {
-            fullSizeImage.open(item.name, item.link)
-        }
-    }, '#element-card');
-        const cardElement = card.generateCard();
-
-        initialCardList.addItem(cardElement);
-    } }, '.elements__container');
+export const initialCardList = new Section({ 
+    items: initialCards, 
+    renderer: renderElements 
+}, '.elements__container');
 
 initialCardList.renderItems();
 
 //создаем экземпляр класса попапа с картинкой
-const fullSizeImage = new PopupWithImage('.popup_type_size');
+export const fullSizeImage = new PopupWithImage('.popup_type_size');
 
 //вызываем метод, чтобы закрывать картинку с помощью крестика и клика по оверлею
 fullSizeImage.setEventListeners();
 
 //создаем экземпляр класса PopupWithForm, чтобы создавать новые карточки
-const addCardForm = new PopupWithForm(
-    '.popup_type_card',
-    (item) => {
-                const card = new Card({
-                card: item,
-                handleCardClick: () => {
-                    fullSizeImage.open(item.name, item.link)
-                }
-            }, '#element-card');
-                const cardElement = card.generateCard();
-                initialCardList.addItem(cardElement);
-                addCardForm.close();
-    }
-)
+const formAddCard = new PopupWithForm('.popup_type_card',renderElements);
 
 //вешаем слушатель сабмита формы
-addCardForm.setEventListeners();
+formAddCard.setEventListeners();
+
+//создаем экземпляр класса UserInfo
+const userData = new UserInfo({
+    userName: '.profile__name',
+    userJob: '.profile__description'
+})
 
 //создаем экземпляр класса PopupWithForm, чтобы редактировать данные пользователя
 const profileEditForm = new PopupWithForm(
@@ -92,5 +76,5 @@ profileEditButton.addEventListener('click', () => {
 //открываем попап добавления карточки
 profileAddButton.addEventListener('click', () => {
     popupAddCardFormCheckValid.resetFormCondition();
-    addCardForm.open();
+    formAddCard.open();
 });

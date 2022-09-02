@@ -31,9 +31,20 @@ module.exports = {
                 exclude: '/node_modules/'
             },
             {
-                // регулярное выражение, которое ищет все файлы с такими расширениями
-                test: /\.(png|svg|jpg|jpeg|gif|woff(2)?|eot|ttf|otf)$/,
-                type: 'asset/resource'
+                // регулярное выражение, которое ищет все файлы с такими расширениями(изображения)
+                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name].[hash][ext]',
+                }
+            },
+            {
+                // регулярное выражение, которое ищет все файлы с такими расширениями(шрифты)
+                test: /\.(woff(2)?|eot|ttf|otf)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name].[hash][ext]',
+                }
             },
             {
                 // применять это правило только к CSS-файлам
@@ -55,6 +66,3 @@ module.exports = {
         new MiniCssExtractPlugin()
     ]
 }
-
-
-// переписали точку выхода, используя утилиту path

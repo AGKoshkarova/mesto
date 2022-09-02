@@ -1,4 +1,4 @@
-class UserInfo {
+export default class UserInfo {
     constructor({ userName, userJob }) {
         this._userNameSelector = document.querySelector(userName);
         this._userJobSelector = document.querySelector(userJob);
@@ -19,10 +19,5 @@ class UserInfo {
         this._userJobSelector.textContent = item.description;
     }
 }
-
-export const userData = new UserInfo({
-    userName: '.profile__name',
-    userJob: '.profile__description'
-})
 
 

@@ -3,7 +3,7 @@
 export default class Popup {
     constructor(popupSelector) {
         this._popupElement = document.querySelector(popupSelector)
-        this._popupList = Array.from(document.querySelectorAll('.popup'));
+        //this._popupList = Array.from(document.querySelectorAll('.popup'));
         this._handleEscClose = this._handleEscClose.bind(this);
     }
 
@@ -30,12 +30,10 @@ export default class Popup {
     //который добавляет слушатель клика иконке закрытия попапа. 
     //Модальное окно также закрывается при клике на затемнённую область вокруг формы
     setEventListeners() {
-        this._popupList.forEach((popup) => {
-            popup.addEventListener('mousedown', (evt) => {
-                if (evt.target.classList.contains('popup_opened') || evt.target.classList.contains('popup__close-btn')) {
-                    this.close();
-                }
-            })
+        this._popupElement.addEventListener('mousedown', (evt) => {
+            if (evt.target.classList.contains('popup_opened') || evt.target.classList.contains('popup__close-btn')) {
+                this.close();
+            }
         })
     }
 }
