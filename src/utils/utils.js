@@ -1,8 +1,7 @@
 import Card from "../components/Card.js"
-import { fullSizeImage } from "../pages/index.js";
-import { initialCardList } from "../pages/index.js";
+import { fullSizeImage, initialCardList } from "../pages/index.js";
 
-export function renderElements (item) {
+export function createCard (item) {
     const card = new Card({
         card: item,
         handleCardClick: () => {
@@ -11,5 +10,9 @@ export function renderElements (item) {
     }, '#element-card');
 
     const cardElement = card.generateCard();
-    initialCardList.addItem(cardElement);
+    return cardElement;
+}
+
+export function renderCard (card) {
+    initialCardList.addItem(card);
 }

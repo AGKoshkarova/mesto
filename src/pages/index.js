@@ -14,14 +14,17 @@ import { validationData } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
-import './index.css'
-import { renderElements } from '../utils/utils.js';
+import './index.css';
+import { createCard, renderCard } from '../utils/utils.js';
 import UserInfo from '../components/UserInfo.js';
 
 //создаем дефолтные карточки
 export const initialCardList = new Section({ 
     items: initialCards, 
-    renderer: renderElements 
+    renderer: (item) => {
+        const card = createCard(item);
+        renderCard(card);
+    } 
 }, '.elements__container');
 
 initialCardList.renderItems();
@@ -33,7 +36,12 @@ export const fullSizeImage = new PopupWithImage('.popup_type_size');
 fullSizeImage.setEventListeners();
 
 //создаем экземпляр класса PopupWithForm, чтобы создавать новые карточки
-const formAddCard = new PopupWithForm('.popup_type_card',renderElements);
+const formAddCard = new PopupWithForm(
+    '.popup_type_card',
+    (item) => {
+        const card = createCard(item);
+        renderCard(card);
+});
 
 //вешаем слушатель сабмита формы
 formAddCard.setEventListeners();
