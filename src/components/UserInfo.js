@@ -9,14 +9,14 @@ export default class UserInfo {
     getUserInfo() {
         return {
             name: this._userNameSelector.textContent,
-            description: this._userJobSelector.textContent,
+            about: this._userJobSelector.textContent,
         }
     }
 
     //публичный метод setUserInfo, который принимает новые данные пользователя и добавляет их на страницу
     setUserInfo(item) {
         this._userNameSelector.textContent = item.name;
-        this._userJobSelector.textContent = item.description;
+        this._userJobSelector.textContent = item.about;
     }
 }
 

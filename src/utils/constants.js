@@ -59,6 +59,17 @@ export const popupBigSizeTitle = popupBigSizeElement.querySelector('.popup__subt
   
 export const popups = document.querySelectorAll('.popup');
 
+export const popupAvatar = document.querySelector('.popup_type_avatar');
+export const popupAvatarInput = popupAvatar.querySelector('.popup__input_type_avatar');
+export const popupAvatarForm = popupAvatar.querySelector('.popup__form_type_avatar');
+export const popupAvatarSubmitButton = popupAvatar.querySelector('.popup__submit-btn');
+
+export const profileAvatarButton = document.querySelector('.profile__avatar-btn');
+export const profileAvatar = document.querySelector('.profile__avatar');
+
+//export const popupDeleteCard = document.querySelector('.popup_type_delete')
+//export const deleteButton = cardItem.querySelector('.element__trash-btn');
+
 const selectors = {
   inputElement: '.popup__input',
   form: '.popup__form',

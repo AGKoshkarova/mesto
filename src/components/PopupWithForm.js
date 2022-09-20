@@ -8,6 +8,8 @@ export default class PopupWithForm extends Popup {
         this._popupElement = document.querySelector(popupSelector)
         this._form = this._popupElement.querySelector('.popup__form');
         this._inputList = this._form.querySelectorAll('.popup__input');
+        this._button = this._form.querySelector('.popup__submit-btn');
+        this._preloader = this._form.querySelector('.popup__preloader');
     }
 
     close() {
@@ -25,6 +27,17 @@ export default class PopupWithForm extends Popup {
           });
         // возвращаем объект значений
         return this._formValues;
+    }
+
+    //метод установки прелодера во время загрузки
+    renderLoading(isLoading) {
+        if(isLoading) {
+            this._button.style.display = 'none';
+            this._preloader.classList.remove('popup__preloader_inactive');
+        } else {
+            this._preloader.classList.add('popup__preloader_inactive');
+            this._button.style.display = 'block';
+        }
     }
 
     //Перезаписывает родительский метод setEventListeners.
