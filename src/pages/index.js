@@ -47,14 +47,16 @@ const initialCardList = new Section({
 //создаем экземпляр класса UserInfo
 const userData = new UserInfo({
     userName: '.profile__name',
-    userJob: '.profile__description'
+    userJob: '.profile__description',
+    userAvatar: '.popup_type_avatar',
+    userID
 })
 
 //создаем переменную в глобальной области видимости, чтобы переопределить ее в запросе
 export let userID = '';
 
 ////создаем переменную в глобальной области видимости, чтобы переопределить ссылку на аватар в запросе
-let userAvatar = document.querySelector('.profile__avatar');
+const userAvatar = document.querySelector('.profile__avatar');
 
 //отрисовываем карточки в соответсвии с данными о пользователе
 Promise.all([api.getUserInformation(), api.getAllCards()])
@@ -66,6 +68,7 @@ Promise.all([api.getUserInformation(), api.getAllCards()])
 })
 .catch((error) => {
     console.log(`Ошибка: ${error}`);
+    console.log(userID);
 })
 
 //создаем экземпляр класса попапа с картинкой
@@ -83,9 +86,13 @@ const formAddCard = new PopupWithForm(
         .then((item) => {
             const card = createCard(item);
             initialCardList.addItem(card);
+            formAddCard.close();
         })
         .catch((error) => {
             console.log(`Ошибка: ${error}`);
+        })
+        .finally(() => {
+            formAddCard.renderLoading(false);
         })
 });
 
@@ -100,9 +107,13 @@ const profileEditForm = new PopupWithForm(
         api.changeUserInfo(data)
         .then((res) => {
             userData.setUserInfo(res);
+            profileEditForm.close();
         })
         .catch((error) => {
             console.log(`Ошибка: ${error}`);
+        })
+        .finally(() => {
+            profileEditForm.renderLoading(false);
         })
 })
 
@@ -123,9 +134,13 @@ const popupWithAvatar = new PopupWithAvatar(
         api.changeAvatar(data)
         .then((res) => {
             userAvatar.src = res.avatar;
+            popupWithAvatar.close();
         })
        .catch((error) => {
            console.log(`Ошибка: ${error}`);
+       })
+       .finally(() => {
+            popupWithAvatar.renderLoading(false);
        })
 })
 
@@ -151,7 +166,6 @@ popupAvatarCheckValid.enableValidation();
 profileEditButton.addEventListener('click', () => {
     popupProfileFormElementChekValid.resetFormCondition()
     profileEditForm.open();
-    profileEditForm.renderLoading(false);
 
     profileNameInput.value = profileName.textContent;
     profileDescriptionInput.value = profileDescription.textContent;
@@ -161,12 +175,10 @@ profileEditButton.addEventListener('click', () => {
 profileAddButton.addEventListener('click', () => {
     popupAddCardFormCheckValid.resetFormCondition();
     formAddCard.open();
-    formAddCard.renderLoading(false);
 });
 
 //открываем попап обнолвения аватара
 profileAvatarButton.addEventListener('click', () => {
     popupAvatarCheckValid.resetFormCondition();
     popupWithAvatar.open();
-    popupWithAvatar.renderLoading(false);
 })

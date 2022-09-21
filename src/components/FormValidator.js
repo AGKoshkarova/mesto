@@ -8,6 +8,7 @@ export default class FormValidator {
         this._inputErrorMessageActive = validationData.inputErrorMessageActive;
         this._formElement = formElement;
         this._button = this._formElement.querySelector(this._submitButton);
+        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputElement));
     }
     //Метод, показывающий ошибку (приватный)
     _showError(inputElement) {
@@ -37,7 +38,6 @@ export default class FormValidator {
 
    //Метод, возвращающая не валидные инпуты
     _hasInvalidInput() {
-        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputElement));
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid
         });
@@ -56,7 +56,6 @@ export default class FormValidator {
     _setEventListeners() {
 
         this._toggleButtonState();
-        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputElement));
 
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
@@ -75,8 +74,7 @@ export default class FormValidator {
     resetFormCondition() {
         this._toggleButtonState();
 
-        this._inputs = Array.from(this._formElement.querySelectorAll(this._inputElement));
-        this._inputs.forEach((inputElement) => {
+        this._inputList.forEach((inputElement) => {
             this._hideError(inputElement);
         })
     }
