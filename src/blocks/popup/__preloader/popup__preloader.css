@@ -1,5 +1,6 @@
 .popup__preloader {
     width: 100%;
+    box-sizing: border-box;
     text-align: center;
     background-color: black;
     color: white;
@@ -11,9 +12,9 @@
     .popup__preloader {
         min-height: 46px;
         margin: 45px auto 25px;
-        padding-top: 2px;
         font-size: 14px;
         line-height: 17px;
+        padding: 14px 0;
     }
 }
 

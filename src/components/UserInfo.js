@@ -1,9 +1,8 @@
 export default class UserInfo {
-    constructor({ userName, userJob, userAvatar, userID }) {
+    constructor({ userName, userJob, userAvatar }) {
         this._userNameSelector = document.querySelector(userName);
         this._userJobSelector = document.querySelector(userJob);
         this._userAvatarSelector = document.querySelector(userAvatar);
-        this._userID = userID;
     }
 
     //публичный метод getUserInfo, который возвращает объект с данными пользователя. 
@@ -20,7 +19,6 @@ export default class UserInfo {
         this._userNameSelector.textContent = item.name;
         this._userJobSelector.textContent = item.about;
         this._userAvatarSelector.src = item.avatar;
-        this._userID = item._id;
     }
 }
 

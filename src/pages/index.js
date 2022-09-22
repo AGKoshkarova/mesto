@@ -45,24 +45,19 @@ const initialCardList = new Section({
 }, '.elements__container');
 
 //создаем экземпляр класса UserInfo
-const userData = new UserInfo({
+export const userData = new UserInfo({
     userName: '.profile__name',
     userJob: '.profile__description',
-    userAvatar: '.popup_type_avatar',
-    userID
+    userAvatar: '.profile__avatar'
 })
 
 //создаем переменную в глобальной области видимости, чтобы переопределить ее в запросе
 export let userID = '';
 
-////создаем переменную в глобальной области видимости, чтобы переопределить ссылку на аватар в запросе
-const userAvatar = document.querySelector('.profile__avatar');
-
 //отрисовываем карточки в соответсвии с данными о пользователе
 Promise.all([api.getUserInformation(), api.getAllCards()])
 .then(([userInfo, cards]) => {
     userData.setUserInfo(userInfo);
-    userAvatar.src = userInfo.avatar;
     userID = userInfo._id;
     initialCardList.renderItems(cards);
 })
@@ -133,7 +128,7 @@ const popupWithAvatar = new PopupWithAvatar(
         popupWithAvatar.renderLoading(data);
         api.changeAvatar(data)
         .then((res) => {
-            userAvatar.src = res.avatar;
+            userData.setUserInfo(res);
             popupWithAvatar.close();
         })
        .catch((error) => {

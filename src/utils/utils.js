@@ -1,5 +1,5 @@
 import Card from "../components/Card.js"
-import { fullSizeImage, userID, popupWithConfirm, api } from "../pages/index.js";
+import { fullSizeImage, popupWithConfirm, api, userID } from "../pages/index.js";
 
 export function createCard (item) {
     const card = new Card({
