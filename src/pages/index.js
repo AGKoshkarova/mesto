@@ -63,7 +63,6 @@ Promise.all([api.getUserInformation(), api.getAllCards()])
 })
 .catch((error) => {
     console.log(`Ошибка: ${error}`);
-    console.log(userID);
 })
 
 //создаем экземпляр класса попапа с картинкой
